@@ -38,6 +38,11 @@ a {
     border-bottom: 2px solid rgb(105, 185, 95);
 }
 
+#active-item{
+    border-left:2px solid rgb(105, 185, 95) ;
+    border-bottom: none;
+}
+
 .nav-link {
     color: rgb(44, 43, 43);
     font-weight: bold;
