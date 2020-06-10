@@ -1,3 +1,4 @@
+
 const url = 'https://itunes.apple.com/search?term=sia&entity=album'
 
 //Lidando com as requisições
@@ -8,7 +9,6 @@ let titulo_2 = document.querySelector('#titulo-2')
 
 let rlDate_1 = document.querySelector('#releaseDate-1')
 let rlDate_2 = document.querySelector('#releaseDate-2')
-
 
 fetch(url)
     .then(resp => resp.json())
@@ -24,11 +24,8 @@ fetch(url)
                 rlDate_2.innerHTML = trataAno(element.releaseDate)
             }
         });
-        console.log(results)
     })
-    .catch(function (error) {
-        console.log(error)
-    });
+    .catch(error => console.log(error))
 
 //Função para setar apenas o ano do album
 function trataAno(releaseDate) {
