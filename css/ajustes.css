@@ -49,3 +49,9 @@ a {
 .espacamento {
     padding: 5px 15%;
 }
+
+
+/*Album*/
+.album_img{
+    width: 50%;
+}
