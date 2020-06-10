@@ -50,8 +50,9 @@ a {
     padding: 5px 15%;
 }
 
-
 /*Album*/
-.album_img{
-    width: 50%;
+
+.album_img {
+    width: 100px;
+    height: 100px;
 }
