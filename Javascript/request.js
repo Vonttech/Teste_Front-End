@@ -64,6 +64,9 @@ function criaElementos(id, element) {
     //Conversão de milisegundos para minutos e segundos
     let min = Math.floor(element.trackTimeMillis / 1000 / 60 << 0)
     let sec = Math.floor((element.trackTimeMillis / 1000) % 60)
+    if (sec < 10) {
+        sec = '0'+sec
+    }
 
     //Criação de elementos
     let div = document.createElement('DIV')
