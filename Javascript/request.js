@@ -57,7 +57,7 @@ function criaElementos(id, element) {
     let trackName = element.trackName
     //Conversão de milisegundos para minutos e segundos
     let min = Math.floor(element.trackTimeMillis / 1000 / 60 << 0)
-    let sec = Math.floor(element.trackTimeMillis % 60)
+    let sec = Math.floor((element.trackTimeMillis / 1000) % 60)
 
 
     let div = document.createElement('DIV')
@@ -65,9 +65,9 @@ function criaElementos(id, element) {
     let div_col_direita = document.createElement('DIV')
 
 
-    div.className = 'row border-top border-bottom'
+    div.className = 'row border-top border-bottom pt-2 pb-2'
     div_col_esquerda.className = 'col-10'
-    div_col_direita.className = 'col'
+    div_col_direita.className = 'col tempo'
 
     div_col_esquerda.innerHTML = trackName
     div_col_direita.innerHTML = `${min}:${sec}`
