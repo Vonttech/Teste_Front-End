@@ -13,6 +13,7 @@ let rlDate_2 = document.querySelector('#releaseDate-2')
 fetch(url)
     .then(resp => resp.json())
     .then(function (data) {
+        //Dados retornados da url
         let results = data.results
         results.forEach(element => {
             if (element.collectionName == 'Everyday Is Christmas') {
@@ -39,6 +40,7 @@ function trataAno(releaseDate) {
 fetch(url_musicas)
     .then(resp => resp.json())
     .then(function (data) {
+        //Dados retornados da url
         let results = data.results
         results.forEach(element => {
             if (element.collectionName == 'Everyday Is Christmas') {
@@ -51,6 +53,10 @@ fetch(url_musicas)
     })
     .catch(error => console.log(error))
 
+/**
+ * Função para criar os elementos no html referente a música do album
+ * Tratar o tempo da música
+ */
 function criaElementos(id, element) {
     let div_pai = document.getElementById(id)
 
@@ -59,18 +65,20 @@ function criaElementos(id, element) {
     let min = Math.floor(element.trackTimeMillis / 1000 / 60 << 0)
     let sec = Math.floor((element.trackTimeMillis / 1000) % 60)
 
-
+    //Criação de elementos
     let div = document.createElement('DIV')
     let div_col_esquerda = document.createElement('DIV')
     let div_col_direita = document.createElement('DIV')
 
-
+    //Classes
     div.className = 'row border-top border-bottom pt-2 pb-2'
     div_col_esquerda.className = 'col-10'
     div_col_direita.className = 'col tempo'
 
+    //Inner
     div_col_esquerda.innerHTML = trackName
     div_col_direita.innerHTML = `${min}:${sec}`
+
     div.appendChild(div_col_esquerda)
     div.appendChild(div_col_direita)
     div_pai.appendChild(div)
